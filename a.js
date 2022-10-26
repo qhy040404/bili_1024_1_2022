@@ -133,11 +133,11 @@ let password = 'bilibili'
 let nonce = 24//parseInt(Math.random()*100+9)
 let random = 'e7114585-d6a4-44b3-920e-3720bf194b82'
 console.log(nonce)
-for (var i =6086866;i<Math.pow(2,255);i++) {
-    let mstr = username+password+random+i.toString()
+for (var i = 6086866; i < Math.pow(2, 255); i++) {
+    let mstr = username + password + random + i.toString()
     var s256 = SHA256(mstr)
     var s256hex = parseInt(s256, 16)
-    if (s256hex < Math.pow(2,(256-nonce))) {
+    if (s256hex < Math.pow(2, (256 - nonce))) {
         console.log(
             JSON.stringify({
                 'username': username,
